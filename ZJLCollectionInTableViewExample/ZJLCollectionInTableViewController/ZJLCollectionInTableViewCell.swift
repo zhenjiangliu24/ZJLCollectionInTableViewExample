@@ -32,7 +32,7 @@ class ZJLCollectionInTableViewCell: UITableViewCell {
         layout.itemSize = CGSizeMake(50, 50)
         layout.scrollDirection = UICollectionViewScrollDirection.Horizontal
         self.collectionView = ZJLCollectionView.init(frame: CGRectZero, collectionViewLayout: layout)
-        self.collectionView.registerClass(UICollectionView.self, forCellWithReuseIdentifier: ZJLCollectionViewCellIdentifier as String)
+        self.collectionView.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: ZJLCollectionViewCellIdentifier as String)
         self.collectionView.backgroundColor = UIColor.whiteColor()
         self.collectionView.showsHorizontalScrollIndicator = false
         self.contentView.addSubview(self.collectionView)

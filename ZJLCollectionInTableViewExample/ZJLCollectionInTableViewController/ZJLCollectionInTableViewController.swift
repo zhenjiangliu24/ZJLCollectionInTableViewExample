@@ -18,7 +18,7 @@ class ZJLCollectionInTableViewController: UITableViewController {
     convenience init(data : Array<AnyObject>) {
         self.init()
         tableView.registerClass(ZJLCollectionInTableViewCell.self, forCellReuseIdentifier: reuseTableCell as String)
-        tableView.separatorStyle = UITableViewCellSeparatorStyle.None
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
         dataArray = data
         offsetDictionary = Dictionary<NSObject,AnyObject>()
         
@@ -31,7 +31,7 @@ extension ZJLCollectionInTableViewController{
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 100.0
+        return 200.0
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -64,8 +64,8 @@ extension ZJLCollectionInTableViewController:UICollectionViewDelegate,UICollecti
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell: UICollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseCollectionCell as String, forIndexPath: indexPath)
         
-        let collectionViewArray = dataArray[collectionView.tag] as! Array<AnyObject>
-        cell.backgroundColor = collectionViewArray[indexPath.item] as? UIColor
+        //let collectionViewArray = dataArray[collectionView.tag] as! Array<AnyObject>
+        cell.backgroundColor = UIColor.grayColor()
         return cell
     }
     
